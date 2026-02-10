@@ -29,7 +29,7 @@ export const CONTENT: ContentData = {
       { year: '2024', role: 'B.Tech CSE Graduate', company: 'Chandigarh Engineering College' },
     ],
     skills: [
-      'Flutter / Dart', 'Kotlin / Jetpack Compose', 'Generative AI', 'Android SDK', 
+      'Flutter / Dart', 'Kotlin / Jetpack Compose', 'Generative AI', 'Android SDK',
       'Clean Architecture', 'MVVM / Bloc', 'Firebase / Supabase', 'RESTful APIs', 'Git / GitHub'
     ]
   },
@@ -111,11 +111,11 @@ export const PROJECTS: Project[] = [
 
 // === SERVICES ===
 export const SERVICES: Service[] = [
-  { 
-    id: '1', 
+  {
+    id: '1',
     slug: 'cross-platform-dev',
-    title: 'Flutter Development', 
-    description: 'Building beautiful, natively compiled applications for mobile from a single codebase.', 
+    title: 'Flutter Development',
+    description: 'Building beautiful, natively compiled applications for mobile from a single codebase.',
     icon: 'smartphone',
     features: ['Custom UI/UX', 'Clean Architecture', 'State Management (Bloc/Provider)', 'Performance Tuning'],
     fullDescription: "I leverage the power of Flutter to build high-quality native interfaces on iOS and Android in record time. My focus is on writing clean, maintainable code that scales.",
@@ -126,11 +126,11 @@ export const SERVICES: Service[] = [
       { title: 'Deployment', description: 'Publishing to Play Store and App Store.' }
     ]
   },
-  { 
-    id: '2', 
+  {
+    id: '2',
     slug: 'android-native',
-    title: 'Native Android', 
-    description: 'Robust and high-performance native Android applications using Kotlin.', 
+    title: 'Native Android',
+    description: 'Robust and high-performance native Android applications using Kotlin.',
     icon: 'code',
     features: ['Jetpack Compose', 'Room Database', 'Background Services', 'Hardware Integration'],
     fullDescription: "For projects requiring deep system integration or maximum performance, I build native Android apps using modern Kotlin practices and Jetpack Compose.",
@@ -141,11 +141,11 @@ export const SERVICES: Service[] = [
       { title: 'Optimization', description: 'Memory profiling and battery optimization.' }
     ]
   },
-  { 
-    id: '3', 
+  {
+    id: '3',
     slug: 'gen-ai-solutions',
-    title: 'Generative AI', 
-    description: 'Integrating LLMs and AI models into mobile experiences.', 
+    title: 'Generative AI',
+    description: 'Integrating LLMs and AI models into mobile experiences.',
     icon: 'bot',
     features: ['LLM Integration', 'Prompt Engineering', 'AI Agents', 'RAG Pipelines'],
     fullDescription: "I bridge the gap between traditional mobile apps and the cutting edge of Generative AI, creating intelligent interfaces that understand and assist users.",
@@ -156,11 +156,11 @@ export const SERVICES: Service[] = [
       { title: 'UX', description: 'Designing AI-native interfaces.' }
     ]
   },
-  { 
-    id: '4', 
+  {
+    id: '4',
     slug: 'backend-integration',
-    title: 'API & Backend', 
-    description: 'Seamless integration with Firebase, Supabase, and RESTful APIs.', 
+    title: 'API & Backend',
+    description: 'Seamless integration with Firebase, Supabase, and RESTful APIs.',
     icon: 'database',
     features: ['Firebase (FCM/Auth)', 'Supabase Real-time', 'REST API (Dio/Retrofit)', 'Socket.io'],
     fullDescription: "A great app needs great data. I specialize in connecting mobile frontends to robust backends, ensuring real-time data sync, secure authentication, and reliable push notifications.",
