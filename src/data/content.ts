@@ -220,5 +220,39 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>In modern apps, users expect real-time feedback. Whether it's a chat app, live score updates, or location tracking, Socket.io is a powerful tool to enable bidirectional communication.</p>
       <p>In my recent project Turflo, integrating Socket.io allowed us to increase user session time by 35%. The key is to manage the socket connection lifecycle properly within your state management solution (like Bloc) to avoid memory leaks.</p>
     `
+  },
+  {
+    id: '4',
+    slug: 'bloc-vs-riverpod',
+    title: 'State Management: Bloc vs. Riverpod',
+    excerpt: 'Choosing the right state management solution for your Flutter project.',
+    date: 'Dec 15, 2024',
+    readTime: '8 min read',
+    category: 'Flutter',
+    imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1470&auto=format&fit=crop',
+    content: `
+      <p>State management is the heart of any Flutter application. While Provider was the go-to for years, Bloc and Riverpod have emerged as the dominant players in 2024.</p>
+      <h3 class="text-2xl font-bold my-4">Bloc: The Enterprise Choice</h3>
+      <p>Bloc enforces a strict separation of concerns and is event-driven. It's excellent for large teams where consistency is key. However, the boilerplate can be overwhelming for simple apps.</p>
+      <h3 class="text-2xl font-bold my-4">Riverpod: The Modern Contender</h3>
+      <p>Riverpod fixes many of Provider's flaws. It's compile-safe, doesn't depend on the widget tree, and is incredibly flexible. For new projects, Riverpod is often the better choice due to its simplicity and power.</p>
+    `
+  },
+  {
+    id: '5',
+    slug: 'optimizing-mobile-performance',
+    title: 'Optimizing Mobile App Performance',
+    excerpt: 'Best practices for keeping your apps running smooth at 60fps.',
+    date: 'Jan 10, 2025',
+    readTime: '10 min read',
+    category: 'Performance',
+    imageUrl: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1469&auto=format&fit=crop',
+    content: `
+      <p>Jank is the enemy of a good user experience. Whether you're using Flutter, React Native, or Native technologies, maintaining 60fps (or 120fps) is crucial.</p>
+      <h3 class="text-2xl font-bold my-4">1. Minimize Re-renders</h3>
+      <p>In Flutter, use \`const\` constructors and split your widgets into smaller components. In React Native, use \`React.memo\` and \`useCallback\` to prevent unnecessary updates.</p>
+      <h3 class="text-2xl font-bold my-4">2. Offload Heavy Tasks</h3>
+      <p>Never block the UI thread. Use Isolates in Dart or Web Workers in JS for heavy computations like image processing or large JSON parsing.</p>
+    `
   }
 ];
