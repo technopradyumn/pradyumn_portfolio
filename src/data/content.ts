@@ -39,8 +39,8 @@ export const CONTENT: ContentData = {
     address: "Indra Nagar, Orai, UP, India"
   },
   socials: [
-    { platform: 'GitHub', url: 'https://github.com', icon: Github },
-    { platform: 'LinkedIn', url: 'https://linkedin.com', icon: Linkedin },
+    { platform: 'GitHub', url: 'https://github.com/technopradyumn', icon: Github },
+    { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/technopradyumn/', icon: Linkedin },
     { platform: 'Email', url: 'mailto:technopradyumn@gmail.com', icon: Mail },
   ]
 };
