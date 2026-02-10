@@ -84,10 +84,10 @@
 
 .four-d-toggle {
     position: fixed;
-    bottom: 40px;
-    left: 40px;
-    width: 140px;
-    height: 140px;
+    bottom: 30px;
+    left: 30px;
+    width: 100px;
+    height: 100px;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -195,14 +195,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
     z-index: 2;
 }
 
 .dimension-icon {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     perspective: 1000px;
 }
 
@@ -220,8 +220,8 @@
 
 .cube-face {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     background: rgba(59, 130, 246, 0.3);
     border: 1px solid rgba(59, 130, 246, 0.8);
     backdrop-filter: blur(5px);
@@ -233,32 +233,32 @@
 }
 
 .cube-face.front {
-    transform: translateZ(25px);
+    transform: translateZ(17.5px);
 }
 
 .cube-face.back {
-    transform: translateZ(-25px) rotateY(180deg);
+    transform: translateZ(-17.5px) rotateY(180deg);
 }
 
 .cube-face.left {
-    transform: rotateY(-90deg) translateZ(25px);
+    transform: rotateY(-90deg) translateZ(17.5px);
 }
 
 .cube-face.right {
-    transform: rotateY(90deg) translateZ(25px);
+    transform: rotateY(90deg) translateZ(17.5px);
 }
 
 .cube-face.top {
-    transform: rotateX(90deg) translateZ(25px);
+    transform: rotateX(90deg) translateZ(17.5px);
 }
 
 .cube-face.bottom {
-    transform: rotateX(-90deg) translateZ(25px);
+    transform: rotateX(-90deg) translateZ(17.5px);
 }
 
 .hypercube-overlay {
     position: absolute;
-    inset: -10px;
+    inset: -8px;
     border: 2px solid transparent;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -274,11 +274,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
+    gap: 1px;
 }
 
 .dimension-label {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 900;
     color: #ffffff;
     text-shadow: 0 0 10px rgba(59, 130, 246, 0.8),
@@ -295,10 +295,10 @@
 }
 
 .mode-text {
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.8);
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     font-family: 'Arial', sans-serif;
 }
@@ -344,52 +344,53 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .four-d-toggle {
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
         bottom: 20px;
         left: 20px;
     }
 
     .dimension-icon {
-        width: 35px;
-        height: 35px;
+        width: 24px;
+        height: 24px;
     }
 
     .cube-face {
-        width: 35px;
-        height: 35px;
+        width: 24px;
+        height: 24px;
     }
 
     .cube-face.front {
-        transform: translateZ(17.5px);
+        transform: translateZ(12px);
     }
 
     .cube-face.back {
-        transform: translateZ(-17.5px) rotateY(180deg);
+        transform: translateZ(-12px) rotateY(180deg);
     }
 
     .cube-face.left {
-        transform: rotateY(-90deg) translateZ(17.5px);
+        transform: rotateY(-90deg) translateZ(12px);
     }
 
     .cube-face.right {
-        transform: rotateY(90deg) translateZ(17.5px);
+        transform: rotateY(90deg) translateZ(12px);
     }
 
     .cube-face.top {
-        transform: rotateX(90deg) translateZ(17.5px);
+        transform: rotateX(90deg) translateZ(12px);
     }
 
     .cube-face.bottom {
-        transform: rotateX(-90deg) translateZ(17.5px);
+        transform: rotateX(-90deg) translateZ(12px);
     }
 
     .dimension-label {
-        font-size: 18px;
+        font-size: 10px;
     }
 
     .mode-text {
-        font-size: 7px;
+        font-size: 5px;
+        letter-spacing: 0.5px;
     }
 }
 

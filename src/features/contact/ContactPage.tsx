@@ -5,6 +5,11 @@ import { Copy, Check, Send } from 'lucide-react';
 
 export const ContactPage = () => {
   const [copied, setCopied] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
   const copyEmail = () => {
     navigator.clipboard.writeText(CONTENT.contact.email);
@@ -68,33 +73,47 @@ export const ContactPage = () => {
           transition={{ delay: 0.4 }}
           className="glass-panel p-8 md:p-12 rounded-3xl border-t border-white/10"
         >
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-6" onSubmit={(e) => {
+            e.preventDefault();
+            const subject = `Portfolio Contact from ${formData.name}`;
+            const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+            window.location.href = `mailto:${CONTENT.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          }}>
             <div className="space-y-2">
               <label className="text-sm font-mono text-zinc-500 uppercase tracking-wider">Your Name</label>
               <input
                 type="text"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-4 focus:outline-none focus:border-blue-500 focus:bg-zinc-900 transition-all text-lg"
                 placeholder="John Doe"
+                required
               />
             </div>
             <div className="space-y-2">
               <label className="text-sm font-mono text-zinc-500 uppercase tracking-wider">Email Address</label>
               <input
                 type="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-4 focus:outline-none focus:border-blue-500 focus:bg-zinc-900 transition-all text-lg"
                 placeholder="john@example.com"
+                required
               />
             </div>
             <div className="space-y-2">
               <label className="text-sm font-mono text-zinc-500 uppercase tracking-wider">Project Details</label>
               <textarea
                 rows={4}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-4 focus:outline-none focus:border-blue-500 focus:bg-zinc-900 transition-all text-lg resize-none"
                 placeholder="Tell me about your project..."
+                required
               />
             </div>
 
-            <button className="w-full bg-white text-black py-4 rounded-xl font-bold text-lg uppercase tracking-wider hover:bg-blue-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group">
+            <button type="submit" className="w-full bg-white text-black py-4 rounded-xl font-bold text-lg uppercase tracking-wider hover:bg-blue-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 group">
               Send Message
               <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </button>

@@ -3,6 +3,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { Text, Html, Trail, Line } from '@react-three/drei';
 import * as THREE from 'three';
 import { useNavigate } from 'react-router-dom';
+import { useFourDMode } from '@/contexts/FourDModeContext';
 
 // Types
 interface Moon {
@@ -16,8 +17,10 @@ interface Moon {
     slug?: string;
     type: 'moon';
     techStack?: string[];
-    features?: string[];
     longDescription?: string;
+    link?: string;
+    actionLabel?: string;
+    features?: string[];
 }
 
 interface Planet {
@@ -29,6 +32,8 @@ interface Planet {
     description: string;
     moons: Moon[];
     path?: string;
+    link?: string;
+    actionLabel?: string;
     type: 'planet';
     techStack?: string[]; // Optional for planets too
 }
@@ -228,7 +233,9 @@ const PORTFOLIO_UNIVERSE: Planet[] = [
                 size: 0.3,
                 color: '#34d399',
                 description: 'Email Me',
-                type: 'moon'
+                type: 'moon',
+                link: 'mailto:technopradyumn@gmail.com',
+                actionLabel: 'Send Email'
             },
             {
                 id: 'linkedin',
@@ -238,7 +245,9 @@ const PORTFOLIO_UNIVERSE: Planet[] = [
                 size: 0.4,
                 color: '#6ee7b7',
                 description: 'Connect on LinkedIn',
-                type: 'moon'
+                type: 'moon',
+                link: 'https://linkedin.com',
+                actionLabel: 'Connect on LinkedIn'
             }
         ]
     }
@@ -252,6 +261,7 @@ const UniverseInfoPanel = ({
     onClose: () => void
 }) => {
     const navigate = useNavigate();
+    const { toggle4DMode } = useFourDMode();
 
     if (!selectedObject) return null;
 
@@ -318,13 +328,27 @@ const UniverseInfoPanel = ({
                 </div>
 
                 <div className="mt-10 pt-6 border-t border-white/10">
-                    {(selectedObject as Planet).path && (
+                    {((selectedObject as any).path || (selectedObject as any).link) && (
                         <button
-                            onClick={() => navigate((selectedObject as Planet).path!)}
+                            onClick={() => {
+                                const path = (selectedObject as any).path;
+                                const link = (selectedObject as any).link;
+
+                                if (path) {
+                                    toggle4DMode(); // Exit 4D mode for internal nav
+                                    navigate(path);
+                                } else if (link) {
+                                    if (link.startsWith('mailto:')) {
+                                        window.location.href = link;
+                                    } else {
+                                        window.open(link, '_blank', 'noopener,noreferrer');
+                                    }
+                                }
+                            }}
                             className="w-full py-4 rounded-lg font-bold text-lg transition-all transform hover:translate-y-[-2px] shadow-lg flex items-center justify-center gap-2 group text-black"
                             style={{ backgroundColor: selectedObject.color }}
                         >
-                            <span>Explore Section</span>
+                            <span>{(selectedObject as any).actionLabel || 'Explore Section'}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
                         </button>
                     )}
