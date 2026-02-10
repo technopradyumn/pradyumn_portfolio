@@ -85,7 +85,7 @@
 .four-d-toggle {
     position: fixed;
     bottom: 40px;
-    right: 40px;
+    left: 40px;
     width: 140px;
     height: 140px;
     border: none;
@@ -347,7 +347,7 @@
         width: 100px;
         height: 100px;
         bottom: 20px;
-        right: 20px;
+        left: 20px;
     }
 
     .dimension-icon {
