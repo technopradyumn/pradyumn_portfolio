@@ -63,10 +63,10 @@ export const CONTENT: ContentData = {
     ],
   },
   stats: [
-    { label: 'AI / LLM Projects', value: '10', suffix: '+' },
-    { label: 'LLM Providers Integrated', value: '5', suffix: '+' },
-    { label: 'Apps Shipped to Production', value: '5', suffix: '+' },
-    { label: 'REST APIs Integrated', value: '50', suffix: '+' },
+  //   { label: 'AI / LLM Projects', value: '10', suffix: '+' },
+  //   { label: 'LLM Providers Integrated', value: '5', suffix: '+' },
+  //   { label: 'Apps Shipped to Production', value: '5', suffix: '+' },
+  //   { label: 'REST APIs Integrated', value: '50', suffix: '+' },
   ],
   contact: {
     email: 'technopradyumn@gmail.com',
