@@ -7,6 +7,7 @@ export interface Project {
   description: string;
   fullDescription: string;
   tags: string[];
+  category: 'ai' | 'mobile' | 'backend';
   imageUrl: string;
   link: string;
   year: string;
@@ -61,6 +62,7 @@ export interface ContentData {
     description: string;
     ctaPrimary: string;
     ctaSecondary: string;
+    roles: string[];
   };
   about: {
     bio: string;
@@ -69,8 +71,17 @@ export interface ContentData {
       role: string;
       company: string;
     }[];
-    skills: string[];
+    skills: {
+      name: string;
+      level: number;
+      category: string;
+    }[];
   };
+  stats: {
+    label: string;
+    value: string;
+    suffix?: string;
+  }[];
   socials: SocialLink[];
   contact: {
     email: string;

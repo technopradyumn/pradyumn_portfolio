@@ -1,102 +1,448 @@
 <!DOCTYPE html>
-<html lang="en" class="antialiased scroll-smooth">
+<html lang="en" class="antialiased scroll-smooth dark">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pradyumn | Mobile & Gen AI Developer</title>
+  <title>Pradyumn | Gen AI & Agentic AI Engineer</title>
+  <meta name="description" content="Pradyumn — Gen AI Engineer, Agentic AI Developer & Data Engineer building intelligent systems with LLMs, RAG pipelines, and autonomous AI agents." />
+  <meta name="keywords" content="Gen AI, Agentic AI, LLM, RAG, LangChain, LangGraph, Data Engineering, Flutter, Mobile AI, Pradyumn" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:wght@300..700&display=swap"
     rel="stylesheet">
   <script>
-    // Polyfill for process.env
+    // Theme initialization - runs before render to prevent flash
+    (function() {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (stored === 'system' && prefersDark) || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+      } else if (stored === 'light' || (stored === 'system' && !prefersDark) || (!stored && !prefersDark)) {
+        document.documentElement.classList.add('light');
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+
     window.process = { env: { NODE_ENV: 'production' } };
 
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
+            heading: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
-            background: '#0a0a0a',
-            surface: '#121212',
-            primary: '#ffffff',
-            secondary: '#a1a1aa',
-            accent: '#3b82f6',
+            accent: {
+              cyan: '#06b6d4',
+              violet: '#8b5cf6',
+              emerald: '#10b981',
+            },
           },
           animation: {
-            'spin-slow': 'spin 20s linear infinite',
+            'gradient': 'gradient 8s ease infinite',
             'float': 'float 6s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+            'shimmer': 'shimmer 3s ease-in-out infinite',
+            'data-flow': 'dataFlow 3s linear infinite',
+            'node-pulse': 'nodePulse 2.5s ease-in-out infinite',
           },
           keyframes: {
+            gradient: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
+            },
             float: {
               '0%, 100%': { transform: 'translateY(0)' },
               '50%': { transform: 'translateY(-20px)' },
-            }
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.4' },
+              '50%': { opacity: '1' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            },
+            dataFlow: {
+              '0%': { strokeDashoffset: '20' },
+              '100%': { strokeDashoffset: '0' },
+            },
+            nodePulse: {
+              '0%, 100%': { r: '3', opacity: '0.6' },
+              '50%': { r: '5', opacity: '1' },
+            },
           }
         }
       }
     }
   </script>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ===== THEME VARIABLES ===== */
+    :root {
+      --bg-primary: #050505;
+      --bg-surface: #0a0a0f;
+      --bg-elevated: #111118;
+      --bg-card: rgba(10, 10, 15, 0.6);
+      --text-primary: #f0f0f5;
+      --text-secondary: #94a3b8;
+      --text-muted: #475569;
+      --border-color: rgba(255, 255, 255, 0.06);
+      --border-hover: rgba(255, 255, 255, 0.12);
+      --glass-bg: rgba(10, 10, 15, 0.6);
+      --glass-border: rgba(255, 255, 255, 0.06);
+      --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+      --code-bg: rgba(6, 182, 212, 0.08);
+      --input-bg: rgba(15, 15, 25, 0.5);
+      --nav-bg: rgba(5, 5, 5, 0.8);
+      --particle-color: 6, 182, 212;
+      --particle-secondary: 139, 92, 246;
+      --gradient-overlay: rgba(5,5,5,0.7);
+    }
+
+    html.light {
+      --bg-primary: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-elevated: #e2e8f0;
+      --bg-card: rgba(255, 255, 255, 0.9);
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --border-color: rgba(0, 0, 0, 0.12);
+      --border-hover: rgba(0, 0, 0, 0.2);
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --glass-border: rgba(0, 0, 0, 0.1);
+      --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.1);
+      --code-bg: rgba(6, 182, 212, 0.08);
+      --input-bg: #f1f5f9;
+      --nav-bg: rgba(248, 250, 252, 0.9);
+      --particle-color: 6, 140, 180;
+      --particle-secondary: 120, 70, 210;
+      --gradient-overlay: rgba(248,250,252,0.7);
+    }
+
+    /* Smooth theme transition for ALL elements */
+    *, *::before, *::after {
+      transition: background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  fill 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  stroke 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
     body {
-      background-color: #050505;
-      color: #ffffff;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
       overflow-x: hidden;
       min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      will-change: background-color, color;
     }
 
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--border-hover); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
 
-    ::-webkit-scrollbar-track {
-      background: #0a0a0a;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #333;
-      border-radius: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
-
-    /* Glassmorphism Utility */
+    /* Glassmorphism */
     .glass-panel {
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
     }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #06b6d4, #8b5cf6, #06b6d4);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+    html.light .gradient-text {
+      background: linear-gradient(135deg, #0891b2, #7c3aed, #0891b2);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Glow effects */
+    .glow-cyan { box-shadow: 0 0 20px rgba(6, 182, 212, 0.15), 0 0 60px rgba(6, 182, 212, 0.05); }
+    .glow-violet { box-shadow: 0 0 20px rgba(139, 92, 246, 0.15), 0 0 60px rgba(139, 92, 246, 0.05); }
+    html.light .glow-cyan { box-shadow: 0 0 20px rgba(6, 182, 212, 0.2), 0 0 40px rgba(6, 182, 212, 0.08); }
+    html.light .glow-violet { box-shadow: 0 0 20px rgba(139, 92, 246, 0.2), 0 0 40px rgba(139, 92, 246, 0.08); }
+
+    /* Card hover */
+    .card-glow {
+      transition: background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: var(--shadow-card);
+    }
+    .card-glow:hover {
+      border-color: rgba(6, 182, 212, 0.2);
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.08), 0 12px 40px rgba(0,0,0,0.3);
+      transform: translateY(-4px);
+    }
+    html.light .card-glow:hover {
+      box-shadow: 0 0 30px rgba(6, 182, 212, 0.1), 0 12px 40px rgba(0,0,0,0.1);
+    }
+
+    /* Gradient border */
+    .gradient-border {
+      position: relative;
+      background: var(--bg-card);
+      border-radius: 1rem;
+    }
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(6,182,212,0.3), rgba(139,92,246,0.3), rgba(6,182,212,0.1));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    /* Scroll progress */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+
+    /* Selection */
+    ::selection { background: rgba(6, 182, 212, 0.3); color: #fff; }
+    html.light ::selection { background: rgba(6, 182, 212, 0.2); color: #0f172a; }
+
+    /* Background canvas */
+    #neural-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+      pointer-events: none;
+    }
+
+    /* AI code rain overlay */
+    .ai-code-overlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100%;
+      z-index: -5;
+      pointer-events: none;
+      overflow: hidden;
+      opacity: 0.04;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      line-height: 1.6;
+      color: var(--text-primary);
+      mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 0%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.6) 0%, transparent 100%);
+    }
+    html.light .ai-code-overlay { opacity: 0.03; }
+
+    /* Agent workflow diagram BG */
+    .agent-flow-bg {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 600px;
+      z-index: -8;
+      pointer-events: none;
+      opacity: 0.03;
+    }
+    html.light .agent-flow-bg { opacity: 0.04; }
+
+    /* Theme transition */
+    *, *::before, *::after {
+      transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+    }
+
+    /* Disable transition on scroll animations */
+    [data-no-theme-transition] * {
+      transition-property: none !important;
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px;
+      border-radius: 9999px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      backdrop-filter: blur(8px);
+    }
+    .theme-toggle button {
+      padding: 6px;
+      border-radius: 9999px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .theme-toggle button.active {
+      background: rgba(6, 182, 212, 0.15);
+      color: #06b6d4;
+    }
+    .theme-toggle button:hover {
+      color: var(--text-primary);
+    }
+
+    html { scroll-behavior: smooth; }
   </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@18.2.0",
-    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-    "react-dom": "https://esm.sh/react-dom@18.2.0",
-    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
-    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?external=react,react-dom",
-    "framer-motion": "https://esm.sh/framer-motion@11.0.8?external=react,react-dom",
-    "lucide-react": "https://esm.sh/lucide-react@0.344.0?external=react,react-dom",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/"
-  }
-}
-</script>
 
 </head>
 
 <body>
+  <div id="scroll-progress"></div>
+  <canvas id="neural-bg"></canvas>
+
+  <!-- AI Code Rain Overlay - subtle background text -->
+  <div class="ai-code-overlay" id="code-rain">
+    <div id="code-rain-content"></div>
+  </div>
+
+  <!-- Agent Workflow SVG Background -->
+  <svg class="agent-flow-bg" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Agent nodes -->
+    <circle cx="400" cy="100" r="40" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="4 4"/>
+    <text x="400" y="105" text-anchor="middle" fill="currentColor" font-size="10" font-family="JetBrains Mono">LLM Router</text>
+
+    <circle cx="200" cy="280" r="35" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="4 4"/>
+    <text x="200" y="285" text-anchor="middle" fill="currentColor" font-size="9" font-family="JetBrains Mono">RAG Agent</text>
+
+    <circle cx="600" cy="280" r="35" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="4 4"/>
+    <text x="600" y="285" text-anchor="middle" fill="currentColor" font-size="9" font-family="JetBrains Mono">Tool Agent</text>
+
+    <circle cx="300" cy="460" r="35" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="4 4"/>
+    <text x="300" y="465" text-anchor="middle" fill="currentColor" font-size="9" font-family="JetBrains Mono">Vector DB</text>
+
+    <circle cx="500" cy="460" r="35" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="4 4"/>
+    <text x="500" y="465" text-anchor="middle" fill="currentColor" font-size="9" font-family="JetBrains Mono">MCP Server</text>
+
+    <!-- Connections with animated dashes -->
+    <line x1="380" y1="135" x2="220" y2="250" stroke="currentColor" stroke-width="0.5" stroke-dasharray="6 4" style="animation: dataFlow 3s linear infinite"/>
+    <line x1="420" y1="135" x2="580" y2="250" stroke="currentColor" stroke-width="0.5" stroke-dasharray="6 4" style="animation: dataFlow 3s linear infinite; animation-delay: 0.5s"/>
+    <line x1="210" y1="315" x2="290" y2="425" stroke="currentColor" stroke-width="0.5" stroke-dasharray="6 4" style="animation: dataFlow 3s linear infinite; animation-delay: 1s"/>
+    <line x1="590" y1="315" x2="510" y2="425" stroke="currentColor" stroke-width="0.5" stroke-dasharray="6 4" style="animation: dataFlow 3s linear infinite; animation-delay: 1.5s"/>
+    <line x1="335" y1="460" x2="465" y2="460" stroke="currentColor" stroke-width="0.5" stroke-dasharray="6 4" style="animation: dataFlow 3s linear infinite; animation-delay: 2s"/>
+
+    <!-- Data flow arrows -->
+    <polygon points="220,250 225,242 215,242" fill="currentColor" opacity="0.5"/>
+    <polygon points="580,250 585,242 575,242" fill="currentColor" opacity="0.5"/>
+  </svg>
+
   <div id="root"></div>
+
+  <script>
+    // Generate code rain content
+    const codeSnippets = [
+      'def agent_router(query):',
+      '  model = select_model(query)',
+      '  return model.generate(query)',
+      '',
+      'class RAGPipeline:',
+      '  def __init__(self, vectordb):',
+      '    self.db = vectordb',
+      '    self.embedder = Embedder()',
+      '',
+      'async def process_doc(doc):',
+      '  chunks = semantic_chunk(doc)',
+      '  embeddings = await embed(chunks)',
+      '  await vectordb.upsert(embeddings)',
+      '',
+      '@tool("search_knowledge")',
+      'def search(query: str):',
+      '  results = qdrant.search(',
+      '    query_vector=embed(query),',
+      '    limit=5',
+      '  )',
+      '  return results',
+      '',
+      'graph = StateGraph(AgentState)',
+      'graph.add_node("reason", reason)',
+      'graph.add_node("act", execute)',
+      'graph.add_edge("reason", "act")',
+      'graph.add_conditional_edges(',
+      '  "act", should_continue,',
+      '  {"end": END, "reason": "reason"}',
+      ')',
+      '',
+      'class LLMOrchestrator:',
+      '  models = {',
+      '    "gemini": GeminiPro(),',
+      '    "gpt4": OpenAI("gpt-4"),',
+      '    "flash": GeminiFlash()',
+      '  }',
+      '',
+      'app = FastAPI()',
+      '',
+      '@app.post("/chat")',
+      'async def chat(req: ChatReq):',
+      '  agent = build_agent(req.model)',
+      '  response = await agent.invoke(',
+      '    {"messages": req.messages}',
+      '  )',
+      '  return response',
+      '',
+      'redis = Redis()',
+      'celery = Celery(broker=redis)',
+      '',
+      '@celery.task',
+      'def ingest_document(doc_id):',
+      '  doc = fetch_document(doc_id)',
+      '  pipeline.process(doc)',
+      '',
+    ];
+
+    const el = document.getElementById('code-rain-content');
+    if (el) {
+      // Repeat code snippets to fill the screen
+      let content = '';
+      for (let i = 0; i < 6; i++) {
+        content += codeSnippets.join('\n') + '\n\n';
+      }
+      el.textContent = content;
+    }
+  </script>
   <script type="module" src="/index.tsx"></script>
 </body>
 

@@ -2,7 +2,6 @@ import React, { ErrorInfo, ReactNode } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './src/App';
 
-// Simple Error Boundary to catch render crashes
 class ErrorBoundary extends React.Component<{ children: ReactNode }, { hasError: boolean; error: Error | null }> {
   state = { hasError: false, error: null };
 
@@ -21,10 +20,34 @@ class ErrorBoundary extends React.Component<{ children: ReactNode }, { hasError:
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ padding: '2rem', color: 'red', backgroundColor: '#111', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-          <h1>Something went wrong.</h1>
-          <p>{this.state.error?.message}</p>
-          <button onClick={() => window.location.reload()} style={{ marginTop: '1rem', padding: '0.5rem 1rem', cursor: 'pointer', background: 'white', color: 'black', border: 'none' }}>
+        <div style={{ 
+          padding: '2rem', 
+          backgroundColor: '#050505', 
+          height: '100vh', 
+          display: 'flex', 
+          flexDirection: 'column', 
+          alignItems: 'center', 
+          justifyContent: 'center',
+          fontFamily: 'Inter, sans-serif',
+          color: '#f0f0f5'
+        }}>
+          <h1 style={{ color: '#06b6d4', fontSize: '2rem', marginBottom: '1rem' }}>Something went wrong.</h1>
+          <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>{this.state.error?.message}</p>
+          <button 
+            onClick={() => window.location.reload()} 
+            style={{ 
+              padding: '0.75rem 2rem', 
+              cursor: 'pointer', 
+              background: '#06b6d4', 
+              color: '#050505', 
+              border: 'none',
+              borderRadius: '9999px',
+              fontWeight: 'bold',
+              fontSize: '0.875rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em'
+            }}
+          >
             Reload Page
           </button>
         </div>
@@ -35,7 +58,6 @@ class ErrorBoundary extends React.Component<{ children: ReactNode }, { hasError:
   }
 }
 
-// Force application to start at Top/Home on every reload.
 if (window.location.hash && window.location.hash !== '#/') {
   window.history.replaceState(null, '', '/#/');
 }

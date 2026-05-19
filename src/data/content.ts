@@ -1,7 +1,6 @@
-import { Project, ContentData, Service, BlogPost, NavItem } from '../../types';
-import { Github, Linkedin, Mail, MapPin, Smartphone, Layers, Database, Code, Zap, Layout, Bot } from 'lucide-react';
+import { Project, ContentData, Service, BlogPost, NavItem } from '../types';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
-// === GLOBAL NAVIGATION ===
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', path: '/' },
   { label: 'Work', path: '/#work' },
@@ -11,248 +10,247 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Contact', path: '/#contact' },
 ];
 
-// === SITE CONTENT ===
 export const CONTENT: ContentData = {
   hero: {
-    greeting: "Hello, I'm Pradyumn",
-    title: "Mobile App, Flutter & Gen AI Developer",
-    subtitle: "Building scalable, high-performance mobile applications integrated with Generative AI.",
-    description: "Result-oriented developer with a B.Tech in Computer Science. Creator of 'CopyClip' and expert in building production-grade applications using Flutter, Dart, Kotlin, and Gen AI technologies.",
+    greeting: "Hey, I'm Pradyumn",
+    title: "AI Engineer & Full-Stack Mobile Developer",
+    subtitle: "I build production-grade AI systems and high-performance mobile apps — from LangGraph agentic workflows and RAG pipelines to Flutter apps shipped on the Play Store.",
+    description: "B.Tech CSE graduate certified by Anthropic. I architect intelligent systems using LLMs, agentic orchestration, and semantic search — and ship them as polished cross-platform mobile and web experiences. Currently building AI-native products at AiToXr.",
     ctaPrimary: "View Projects",
-    ctaSecondary: "Contact Me"
+    ctaSecondary: "Contact Me",
+    roles: [
+      "Agentic AI Engineer",
+      "LLM Orchestration Engineer",
+      "RAG Pipeline Developer",
+      "Gen AI Engineer",
+      "Mobile App Developer",
+      "Full-Stack AI Developer",
+    ],
   },
   about: {
-    bio: "I am a passionate Mobile App Developer with practical experience delivering scalable solutions. With a strong foundation in Computer Science, I specialize in creating cross-platform applications using Flutter and native Android development with Kotlin. My expertise lies in Clean Architecture, modular code maintainability, high-performance UI components, and integrating Generative AI into mobile experiences.",
+    bio: "I'm an AI Engineer and Full-Stack Mobile Developer who specialises in turning cutting-edge AI research into real, shipped products. My core expertise spans Generative AI systems, Retrieval-Augmented Generation, and LangGraph-based agentic workflows — built on FastAPI backends and deployed with Docker. On the mobile side, I architect and ship production Flutter apps with Clean Architecture, real-time WebSocket features, secure payment integrations, and AI-powered assistants. I've built AI chatbot modules that reduced support queries by ~30%, implemented streaming inference that cut perceived latency by ~60%, and shipped CopyClip — a 7-feature productivity suite — independently to the Google Play Store. I hold Anthropic certification in AI fundamentals and production LLM systems, and a Full-Stack Generative & Agentic AI certification covering LangChain, LangGraph, MCP Servers, PyTorch, and Docker. I care about systems that actually work in production — not just demos.",
     experience: [
-      { year: 'Present', role: 'Mobile App Developer', company: 'AiToXr (Remote)' },
-      { year: 'Internship', role: 'Mobile App Developer Intern', company: 'AiToXr (Remote)' },
-      { year: '2024', role: 'B.Tech CSE Graduate', company: 'Chandigarh Engineering College' },
+      { year: 'Sep 2025 – Present', role: 'Mobile App Developer', company: 'AiToXr (Remote)' },
+      { year: 'Feb 2025 – Aug 2025', role: 'Mobile App Developer Intern', company: 'AiToXr (Remote)' },
+      { year: '2025', role: 'B.Tech CSE Graduate', company: 'Chandigarh Engineering College, Mohali — 7.58 CGPA' },
     ],
     skills: [
-      'Flutter / Dart', 'Kotlin / Jetpack Compose', 'Generative AI', 'Android SDK',
-      'Clean Architecture', 'MVVM / Bloc', 'Firebase / Supabase', 'RESTful APIs', 'Git / GitHub'
-    ]
+      { name: 'Python', level: 93, category: 'AI/Backend' },
+      { name: 'LangGraph / LangChain', level: 90, category: 'AI/Backend' },
+      { name: 'OpenAI / Gemini / Claude APIs', level: 91, category: 'AI/Backend' },
+      { name: 'RAG Pipelines', level: 88, category: 'AI/Backend' },
+      { name: 'Prompt Engineering', level: 87, category: 'AI/Backend' },
+      { name: 'Hugging Face / Ollama', level: 82, category: 'AI/Backend' },
+      { name: 'MCP Servers', level: 80, category: 'AI/Backend' },
+      { name: 'FastAPI', level: 88, category: 'AI/Backend' },
+      { name: 'Qdrant / ChromaDB / Pinecone', level: 84, category: 'AI/Backend' },
+      { name: 'Redis / Async Queues', level: 82, category: 'AI/Backend' },
+      { name: 'Docker', level: 83, category: 'AI/Backend' },
+      { name: 'PyTorch / NumPy / Pandas', level: 78, category: 'AI/Backend' },
+      { name: 'Flutter / Dart', level: 92, category: 'Mobile' },
+      { name: 'Kotlin / Jetpack Compose', level: 83, category: 'Mobile' },
+      { name: 'Bloc / Provider State Mgmt', level: 87, category: 'Mobile' },
+      { name: 'Clean Architecture', level: 88, category: 'Mobile' },
+      { name: 'WebSockets / Real-time', level: 85, category: 'Mobile' },
+      { name: 'Razorpay / Payment Gateways', level: 82, category: 'Mobile' },
+      { name: 'Firebase / Supabase', level: 84, category: 'Mobile' },
+      { name: 'Google Play Store (Published)', level: 90, category: 'Mobile' },
+      { name: 'Node.js / Express', level: 80, category: 'Data' },
+      { name: 'MongoDB / PostgreSQL', level: 81, category: 'Data' },
+      { name: 'Neo4j / Vector DBs', level: 76, category: 'Data' },
+      { name: 'JWT / Auth Systems', level: 83, category: 'Data' },
+      { name: 'GitHub Actions / CI/CD', level: 78, category: 'Data' },
+    ],
   },
+  stats: [
+    { label: 'AI / LLM Projects', value: '10', suffix: '+' },
+    { label: 'LLM Providers Integrated', value: '5', suffix: '+' },
+    { label: 'Apps Shipped to Production', value: '5', suffix: '+' },
+    { label: 'REST APIs Integrated', value: '50', suffix: '+' },
+  ],
   contact: {
-    email: "technopradyumn@gmail.com",
-    phone: "+91 9453283619",
-    address: "Indra Nagar, Orai, UP, India"
+    email: 'technopradyumn@gmail.com',
+    phone: '+91 9453283619',
+    address: 'Indra Nagar, Orai, Jalaun, UP, India',
   },
   socials: [
     { platform: 'GitHub', url: 'https://github.com/technopradyumn', icon: Github },
     { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/technopradyumn/', icon: Linkedin },
     { platform: 'Email', url: 'mailto:technopradyumn@gmail.com', icon: Mail },
-  ]
+  ],
 };
 
-// === PROJECTS ===
 export const PROJECTS: Project[] = [
   {
-    id: '1',
-    slug: 'copyclip',
-    title: 'CopyClip',
-    description: 'A comprehensive productivity super-app live on Play Store.',
-    fullDescription: 'CopyClip is a production-ready application featuring immersive Hero animations and multiple theme support. It serves as a comprehensive productivity suite integrating Clipboard Manager, Notes, Rich Text Editor, To-Do Lists, Expense Tracker, Journals, and Canvas into a unified, high-performance ecosystem.',
-    tags: ['Flutter', 'Dart', 'Clean Architecture', 'Play Store'],
+    id: '1', slug: 'documind-ai', title: 'DocuMind AI',
+    description: 'Production-grade AI document Q&A platform — multi-PDF RAG pipeline with LangGraph agentic reasoning and async inference.',
+    fullDescription: 'DocuMind AI is a full-stack document intelligence platform where users upload multiple PDFs and query them through a context-aware RAG pipeline. Backed by Qdrant for fast semantic retrieval, it uses a 4-node LangGraph agentic workflow that self-corrects and reasons across multi-step document queries rather than doing a single flat lookup. Long-running inference jobs are offloaded to Redis RQ background workers, keeping FastAPI endpoints responsive while generation completes asynchronously. The frontend is built in React.',
+    tags: ['LangGraph', 'RAG', 'FastAPI', 'Qdrant', 'Redis RQ', 'React', 'Python'],
+    category: 'ai',
+    imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1632&auto=format&fit=crop',
+    link: 'https://github.com/technopradyumn', year: '2026', client: 'Personal Project', role: 'Full-Stack AI Engineer',
+    challenges: 'Achieving high retrieval accuracy across multi-format PDFs while keeping API response times low under concurrent load.',
+    solution: 'Designed a 4-node LangGraph agentic graph with self-correction cycles, semantic chunking for superior retrieval, and a Redis RQ worker pool for async inference — resulting in consistently fast API responses regardless of document volume.',
+  },
+  {
+    id: '2', slug: 'agentic-ai-platform', title: 'Agentic AI System',
+    description: 'Multi-LLM stateful agent platform with RAG, MCP Servers, Ollama local inference, and provider-agnostic orchestration.',
+    fullDescription: 'A comprehensive agentic AI system built to explore production-grade multi-LLM orchestration. RAG pipelines using Qdrant and ChromaDB retrieve grounded context before generation, directly reducing hallucinations compared to prompt-only calls. Stateful LangGraph agents with conditional branching, cycles, and persistent checkpoints enable autonomous multi-step task execution across OpenAI GPT and Google Gemini. MCP servers expose tools to agents; Hugging Face models and Ollama enable local on-device inference — making the architecture fully provider-agnostic.',
+    tags: ['LangGraph', 'RAG', 'MCP Servers', 'Ollama', 'Qdrant', 'ChromaDB', 'OpenAI', 'Gemini'],
+    category: 'ai',
+    imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1634&auto=format&fit=crop',
+    link: 'https://github.com/technopradyumn', year: '2026', client: 'Personal Project', role: 'AI Systems Architect',
+    challenges: 'Designing a system that works equally well across OpenAI, Gemini, and local Ollama models without coupling business logic to a specific provider.',
+    solution: 'Built a provider-agnostic LLM router on top of LangGraph state machines, with MCP server tool-exposure and persistent checkpoints — enabling seamless provider swap without touching agent logic.',
+  },
+  {
+    id: '3', slug: 'aitoxr-mobile-app', title: 'AiToXr — Production Mobile App',
+    description: 'Cross-platform Flutter app with real-time WebSocket chat, AES encryption, Razorpay payments, AI assistant, and FCM push.',
+    fullDescription: 'Led full mobile development at AiToXr — a production cross-platform application serving real users on Android and iOS. Built real-time chat from scratch using WebSockets with basic AES message encryption/decryption for secure communication. Integrated Razorpay Payment Gateway achieving a 99.9% transaction success rate. Engineered the FCM push notification system, boosting DAU by 20% and re-engagement by 15%. Integrated an AI-powered chatbot module via LLM APIs with custom prompt engineering, reducing user support queries by ~30% and achieving AI response delivery under 2 seconds. Implemented streaming response architecture cutting perceived AI latency by ~60%. Used GoRouter, Bloc/Cubit, and Supabase for a clean, performant architecture.',
+    tags: ['Flutter', 'WebSocket', 'AES Encryption', 'Razorpay', 'FCM', 'LLM API', 'Supabase', 'Bloc'],
+    category: 'mobile',
     imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1470&auto=format&fit=crop',
-    link: '#',
-    year: '2024',
-    client: 'Personal Project',
-    role: 'Sole Developer',
-    challenges: 'Integrating multiple productivity tools into a single app while maintaining smooth performance and modularity.',
-    solution: 'Utilized Clean Architecture to decouple features and implemented high-performance UI components to ensure a seamless user experience.'
+    link: '#', year: '2026', client: 'AiToXr', role: 'Mobile App Developer',
+    challenges: 'Shipping a real-time, AI-powered, payment-enabled production app across Android and iOS with minimal latency and zero compromise on security.',
+    solution: 'Architected the app with Clean Architecture + Bloc for maintainability, WebSocket for real-time sync, AES encryption for message security, streaming LLM integration for fast AI responses, and Razorpay for payments — all profiled with Flutter DevTools to cut frame drops by 40–50%.',
   },
   {
-    id: '2',
-    slug: 'turflo',
-    title: 'Turflo',
-    description: 'Sports venue booking platform with real-time features.',
-    fullDescription: 'Designed and built a comprehensive sports venue booking platform. The app features real-time chat using Socket.io and secure in-app transactions via Cashfree Payment Gateway.',
-    tags: ['Flutter', 'Socket.io', 'Supabase', 'Bloc'],
-    imageUrl: 'https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1470&auto=format&fit=crop',
-    link: '#',
-    year: '2024',
-    client: 'AiToXr',
-    role: 'Mobile App Developer',
-    challenges: 'Achieving real-time data synchronization and ensuring transaction security.',
-    solution: 'Implemented Socket.io for chat, achieving a 35% increase in session time, and integrated Cashfree with a 99.9% success rate.'
+    id: '4', slug: 'copyclip', title: 'CopyClip',
+    description: 'Independently designed, built, and shipped a 7-feature offline-first productivity super-app to the Google Play Store.',
+    fullDescription: 'CopyClip is a fully offline-first productivity suite independently designed, developed, and published to the Google Play Store. It integrates 7 features into one cohesive app: Clipboard Manager, Notes, Rich Text Editor, To-Do Lists, Expense Tracker, Journals, and Canvas. Built with Clean Architecture and Hive for zero-network-dependency data persistence. Features Material Design 3, Hero animations, multi-theme support, and Python automation for bulk image processing — optimised for a low crash rate across devices.',
+    tags: ['Flutter', 'Dart', 'Clean Architecture', 'Hive', 'Material Design 3', 'Google Play Store'],
+    category: 'mobile',
+    imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1470&auto=format&fit=crop',
+    link: '#', year: '2025', client: 'Personal Project', role: 'Sole Developer',
+    challenges: 'Shipping 7 integrated tools as a single, cohesive, performant app — entirely solo — without any network dependency.',
+    solution: 'Designed the full app architecture with Clean Architecture + Hive for offline-first persistence, used Python automation to streamline asset processing, and shipped to the Play Store with proper ASO and Play Console management.',
   },
   {
-    id: '3',
-    slug: 'flying-marioo',
-    title: 'Flying Marioo',
-    description: 'High-performance 2D game built with Jetpack Compose.',
-    fullDescription: 'Engineered a high-performance 2D game applying performance-focused rendering techniques to deliver smooth and responsive gameplay.',
-    tags: ['Android', 'Kotlin', 'Jetpack Compose', 'Room DB'],
-    imageUrl: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1470&auto=format&fit=crop',
-    link: '#',
-    year: '2023',
-    client: 'Personal Project',
-    role: 'Game Developer',
-    challenges: 'Efficiently tracking game progress and high scores locally without lag.',
-    solution: 'Architected a local persistence layer using Room Database, resulting in 40-60% faster data retrieval compared to file I/O.'
+    id: '5', slug: 'lume-video-backend', title: 'Lume — Video Sharing Backend',
+    description: 'Production-ready Node.js video streaming backend with JWT auth, Cloudinary, watch history, and Mongoose aggregation pipelines.',
+    fullDescription: 'Lume is a production-grade video sharing backend built with Node.js, Express, and MongoDB. Features secure JWT authentication with bcrypt-encrypted passwords and Cloudinary integration for scalable file storage. Engineered complex social features including watch history, subscription tracking, and tweet/comment interaction layers using Mongoose aggregation pipelines. Uses centralised error-handling middleware for clean, maintainable code across all routes.',
+    tags: ['Node.js', 'Express', 'MongoDB', 'JWT', 'Cloudinary', 'Mongoose', 'REST API'],
+    category: 'backend',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop',
+    link: 'https://github.com/technopradyumn', year: '2026', client: 'Personal Project', role: 'Backend Developer',
+    challenges: 'Building complex social interaction layers (subscriptions, watch history, comments) with performant queries on MongoDB.',
+    solution: 'Used Mongoose aggregation pipelines for complex data transformations and lookups, JWT + bcrypt for secure auth, and centralised middleware for consistent error handling across all endpoints.',
   },
   {
-    id: '4',
-    slug: 'ev-station-map',
-    title: 'EV Station Map',
-    description: 'Real-time EV station locator using Google Maps API.',
-    fullDescription: 'Programmed a real-time EV station locator application enhancing data accuracy through precise location tracking and validation.',
-    tags: ['Android', 'Java', 'Google Maps API'],
+    id: '6', slug: 'ev-station-map', title: 'EV Station Map',
+    description: 'Real-time EV station locator app with Google Maps API and precise geolocation tracking.',
+    fullDescription: 'An Android application that helps users locate nearby EV charging stations in real time. Built using Java and the Google Maps SDK, with precise geolocation tracking and an optimised nearby-search algorithm for fast station discovery and accurate distance calculations.',
+    tags: ['Android', 'Java', 'Google Maps API', 'Geolocation', 'REST APIs'],
+    category: 'mobile',
     imageUrl: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=1472&auto=format&fit=crop',
-    link: '#',
-    year: '2023',
-    client: 'Personal Project',
-    role: 'Android Developer',
-    challenges: 'Delivering fast and reliable search results for nearby stations.',
-    solution: 'Optimized search functionality to deliver faster results, significantly improving the user experience.'
-  }
+    link: '#', year: '2023', client: 'Personal Project', role: 'Android Developer',
+    challenges: 'Delivering fast and accurate search results for nearby EV stations from live map data.',
+    solution: 'Optimised the geolocation and search pipeline using the Google Maps API, resulting in significantly faster and more precise station discovery.',
+  },
 ];
 
-// === SERVICES ===
 export const SERVICES: Service[] = [
   {
-    id: '1',
-    slug: 'cross-platform-dev',
-    title: 'Flutter Development',
-    description: 'Building beautiful, natively compiled applications for mobile from a single codebase.',
-    icon: 'smartphone',
-    features: ['Custom UI/UX', 'Clean Architecture', 'State Management (Bloc/Provider)', 'Performance Tuning'],
-    fullDescription: "I leverage the power of Flutter to build high-quality native interfaces on iOS and Android in record time. My focus is on writing clean, maintainable code that scales.",
-    process: [
-      { title: 'Analysis', description: 'Understanding app requirements and target audience.' },
-      { title: 'Architecture', description: 'Setting up Clean Architecture and modular structure.' },
-      { title: 'Development', description: 'Iterative coding with regular builds.' },
-      { title: 'Deployment', description: 'Publishing to Play Store and App Store.' }
-    ]
-  },
-  {
-    id: '2',
-    slug: 'android-native',
-    title: 'Native Android',
-    description: 'Robust and high-performance native Android applications using Kotlin.',
-    icon: 'code',
-    features: ['Jetpack Compose', 'Room Database', 'Background Services', 'Hardware Integration'],
-    fullDescription: "For projects requiring deep system integration or maximum performance, I build native Android apps using modern Kotlin practices and Jetpack Compose.",
-    process: [
-      { title: 'Design', description: 'Material Design implementation.' },
-      { title: 'Logic', description: 'Business logic with MVVM.' },
-      { title: 'Persistence', description: 'Local data storage with Room.' },
-      { title: 'Optimization', description: 'Memory profiling and battery optimization.' }
-    ]
-  },
-  {
-    id: '3',
-    slug: 'gen-ai-solutions',
-    title: 'Generative AI',
-    description: 'Integrating LLMs and AI models into mobile experiences.',
+    id: '1', slug: 'agentic-ai-development', title: 'Agentic AI Development',
+    description: 'Autonomous AI agents with multi-step reasoning, tool-use, persistent checkpoints, and self-correction — powered by LangGraph.',
     icon: 'bot',
-    features: ['LLM Integration', 'Prompt Engineering', 'AI Agents', 'RAG Pipelines'],
-    fullDescription: "I bridge the gap between traditional mobile apps and the cutting edge of Generative AI, creating intelligent interfaces that understand and assist users.",
+    features: ['LangGraph State Machine Workflows', 'ReAct & Multi-Step Reasoning Agents', 'MCP Server Tool Exposure', 'Persistent Checkpoints & Memory', 'OpenAI / Gemini / Claude / Ollama Support'],
+    fullDescription: "I design and build production autonomous AI agents that can reason, plan, self-correct, and execute complex multi-step tasks. Using LangGraph state machines, I model agent workflows as directed graphs with conditional branching, cycles, and persistent checkpoints — giving you fine-grained control over agent behavior, error recovery, and human-in-the-loop steps. I've built agentic systems across OpenAI GPT, Google Gemini, Claude, Hugging Face, and Ollama — fully provider-agnostic by design.",
     process: [
-      { title: 'Strategy', description: 'Identifying AI use cases.' },
-      { title: 'Integration', description: 'Connecting Gemini/OpenAI APIs.' },
-      { title: 'Fine-tuning', description: 'Optimizing responses.' },
-      { title: 'UX', description: 'Designing AI-native interfaces.' }
-    ]
+      { title: 'Discovery', description: 'Mapping automation opportunities and defining agent capabilities and tool schemas.' },
+      { title: 'Architecture', description: 'Designing LangGraph state machines with conditional edges, cycles, and fallback paths.' },
+      { title: 'Implementation', description: 'Building and testing agent workflows with MCP server integrations and error handling.' },
+      { title: 'Deployment', description: 'Containerised deployment with logging, observability, and performance monitoring.' },
+    ],
   },
   {
-    id: '4',
-    slug: 'backend-integration',
-    title: 'API & Backend',
-    description: 'Seamless integration with Firebase, Supabase, and RESTful APIs.',
-    icon: 'database',
-    features: ['Firebase (FCM/Auth)', 'Supabase Real-time', 'REST API (Dio/Retrofit)', 'Socket.io'],
-    fullDescription: "A great app needs great data. I specialize in connecting mobile frontends to robust backends, ensuring real-time data sync, secure authentication, and reliable push notifications.",
+    id: '2', slug: 'rag-llm-integration', title: 'RAG & LLM Integration',
+    description: 'End-to-end Retrieval-Augmented Generation pipelines: semantic chunking, vector search, multi-model routing, and hallucination reduction.',
+    icon: 'brain',
+    features: ['Qdrant / ChromaDB / Pinecone Vector Search', 'Semantic Chunking & Embedding Pipelines', 'Multi-Model Routing (OpenAI / Gemini / Claude)', 'Hybrid Search Strategies', 'Context Window Optimisation'],
+    fullDescription: "I build production-grade RAG systems that connect proprietary data to powerful LLMs with high retrieval accuracy and minimal hallucinations. I handle the full pipeline — document ingestion, chunking strategy, embedding model selection, vector database indexing, semantic search, and generation. I've achieved 95%+ retrieval accuracy and cut hallucinations significantly compared to prompt-only approaches by always grounding responses in retrieved context.",
     process: [
-      { title: 'Setup', description: 'Configuring cloud services (Firebase/Supabase).' },
-      { title: 'Integration', description: 'Connecting APIs using Dio or Retrofit.' },
-      { title: 'Real-time', description: 'Implementing Sockets or Streams.' },
-      { title: 'Testing', description: 'Ensuring data integrity and error handling.' }
-    ]
-  }
+      { title: 'Data Analysis', description: 'Understanding document types, formats, volume, and query patterns.' },
+      { title: 'Pipeline Design', description: 'Choosing chunking strategy, embedding model, and vector DB based on use case.' },
+      { title: 'LLM Integration', description: 'Multi-model routing with dynamic fallback between providers.' },
+      { title: 'Optimisation', description: 'Tuning retrieval accuracy, reducing hallucinations, and improving response quality.' },
+    ],
+  },
+  {
+    id: '3', slug: 'flutter-mobile-development', title: 'Flutter Mobile Development',
+    description: 'Production-grade cross-platform Android & iOS apps with Clean Architecture, real-time features, payment integration, and Play Store deployment.',
+    icon: 'smartphone',
+    features: ['Flutter / Dart (Android & iOS)', 'Clean Architecture + Bloc', 'Real-time WebSocket Chat', 'Payment Gateway Integration (Razorpay)', 'AI / LLM-Powered Features', 'Google Play Store Publishing & ASO'],
+    fullDescription: "I build high-performance cross-platform mobile applications using Flutter that are architectured for scale and shipped to production. My experience includes real-time WebSocket chat with AES encryption, Razorpay payment integration with 99.9% success rate, FCM push notifications, AI chatbot modules with streaming LLM responses, and offline-first apps with Hive persistence — all profiled with Flutter DevTools to eliminate frame drops. I've published apps to the Google Play Store independently and as part of a team.",
+    process: [
+      { title: 'Planning', description: 'Requirements breakdown, architecture decisions, and AI/feature mapping.' },
+      { title: 'Development', description: 'Cross-platform Flutter development with Clean Architecture and Bloc.' },
+      { title: 'Integration', description: 'REST APIs, WebSockets, payment gateways, push notifications, and AI backends.' },
+      { title: 'Deployment', description: 'Performance profiling, Play Store publishing, ASO, and Play Console management.' },
+    ],
+  },
+  {
+    id: '4', slug: 'ai-backend-systems', title: 'AI Backend & Data Engineering',
+    description: 'Scalable FastAPI backends with async Redis job queues, Docker containerisation, and cloud deployments purpose-built for AI workloads.',
+    icon: 'database',
+    features: ['FastAPI Async Backends', 'Redis RQ / Celery Job Queues', 'Docker Containerisation', 'MongoDB / PostgreSQL / Neo4j', 'AWS / Cloud Deployment', 'CI/CD with GitHub Actions'],
+    fullDescription: "AI applications are only as good as the infrastructure behind them. I build robust, async-first FastAPI backends that handle heavy AI workloads without blocking — offloading inference, embedding generation, and document ingestion to Redis-backed worker queues. I've architected pipelines processing thousands of documents daily with zero data loss, and deployed them as containerised microservices with health checks, logging, and Nginx reverse proxy.",
+    process: [
+      { title: 'Architecture', description: 'Designing async system architecture, data flows, and queue topology.' },
+      { title: 'Backend', description: 'Building FastAPI services with background workers and async processing.' },
+      { title: 'Infrastructure', description: 'Docker containerisation and cloud deployment on AWS / Railway / Render.' },
+      { title: 'Monitoring', description: 'Health checks, structured logging, and performance monitoring.' },
+    ],
+  },
+  {
+    id: '5', slug: 'api-integration', title: 'API & Real-Time Systems',
+    description: 'RESTful and WebSocket APIs, JWT authentication, secure payment integrations, and event-driven architectures.',
+    icon: 'server',
+    features: ['REST & WebSocket APIs', 'JWT / Auth Systems', 'Razorpay / Payment Gateways', 'Firebase / Supabase', 'Streaming Responses (LLM)', 'Node.js / Express Backends'],
+    fullDescription: "I design and build secure, high-performance APIs for both AI and traditional applications. From REST and WebSocket endpoints to JWT-based multi-tenant auth, payment gateway integrations, and streaming LLM response architectures — I build systems that handle real production traffic. I've integrated 50+ REST APIs in production mobile apps and built Node.js backends with Mongoose aggregation pipelines for complex data operations.",
+    process: [
+      { title: 'Design', description: 'API specification, schema design, and security model planning.' },
+      { title: 'Development', description: 'Building secure endpoints with auth, validation, and error handling.' },
+      { title: 'Real-time', description: 'WebSocket and event-driven features with low latency.' },
+      { title: 'DevOps', description: 'CI/CD pipelines, Docker, and production deployment.' },
+    ],
+  },
 ];
 
-// === BLOG ===
 export const BLOG_POSTS: BlogPost[] = [
   {
-    id: '1',
-    slug: 'clean-architecture-flutter',
-    title: 'Clean Architecture in Flutter',
-    excerpt: 'Why modularity matters for scalable mobile applications.',
-    date: 'Oct 20, 2024',
-    readTime: '6 min read',
-    category: 'Development',
-    imageUrl: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=1470&auto=format&fit=crop',
-    content: `
-      <p>Building small apps is easy, but maintaining large ones is hard. This is where Clean Architecture comes in. By separating your code into independent layers—Domain, Data, and Presentation—you create a codebase that is testable, maintainable, and scalable.</p>
-      <h3 class="text-2xl font-bold my-4">The Layers</h3>
-      <p>The <strong>Domain Layer</strong> contains your business logic and entities. It should be completely independent of Flutter.</p>
-      <p>The <strong>Data Layer</strong> handles data retrieval from APIs or local databases. It implements the interfaces defined in the domain layer.</p>
-      <p>The <strong>Presentation Layer</strong> is where UI/UX lives (Widgets, Bloc/Provider). It depends on the domain layer to get data.</p>
-    `
-  },
-  {
-    id: '2',
-    slug: 'ai-in-mobile',
-    title: 'Integrating Gen AI in Mobile Apps',
-    excerpt: 'Enhancing user experience with On-device and Cloud AI.',
-    date: 'Nov 12, 2024',
-    readTime: '6 min read',
-    category: 'Gen AI',
+    id: '1', slug: 'production-rag-pipelines', title: 'Building Production RAG Pipelines That Actually Work',
+    excerpt: 'From semantic chunking and vector indexing to hallucination reduction — a ground-up guide to RAG systems that hold up in production.',
+    date: 'Mar 15, 2025', readTime: '8 min read', category: 'Gen AI',
     imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1632&auto=format&fit=crop',
-    content: `
-      <p>Generative AI is transforming how users interact with mobile applications. From smart replies to personalized content generation, the possibilities are endless.</p>
-      <h3 class="text-2xl font-bold my-4">Hybrid Approach</h3>
-      <p>By combining lightweight on-device models for latency-sensitive tasks and powerful cloud APIs (like Gemini) for complex reasoning, we can build apps that are both responsive and intelligent.</p>
-    `
+    content: `<p>Retrieval Augmented Generation has become the gold standard for connecting LLMs to proprietary data. But building a production-ready RAG pipeline — one that handles real users, multi-format documents, and high retrieval accuracy — is far more complex than a demo shows.</p><h3 class="text-2xl font-bold my-4 font-heading">Why Naive RAG Fails</h3><p>Fixed-size chunk splitting destroys context. When a question spans a sentence boundary that falls between chunks, your retriever returns garbage — and the LLM hallucinates to fill the gap. Semantic chunking, which respects document structure and paragraph boundaries, solves this at the root. In DocuMind AI, switching to semantic chunking improved answer quality by over 40%.</p><h3 class="text-2xl font-bold my-4 font-heading">The LangGraph Correction Loop</h3><p>A single-pass retrieval pipeline is fragile. A 4-node LangGraph agentic graph — retrieve, grade relevance, conditionally re-query, then generate — catches bad retrieval before it reaches the LLM. This self-correction cycle alone cuts irrelevant answers dramatically.</p>`,
   },
   {
-    id: '3',
-    slug: 'real-time-flutter',
-    title: 'Real-time Features with Socket.io',
-    excerpt: 'Building live chat functionality in Flutter.',
-    date: 'Aug 05, 2024',
-    readTime: '7 min read',
-    category: 'Tutorial',
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop',
-    content: `
-      <p>In modern apps, users expect real-time feedback. Whether it's a chat app, live score updates, or location tracking, Socket.io is a powerful tool to enable bidirectional communication.</p>
-      <p>In my recent project Turflo, integrating Socket.io allowed us to increase user session time by 35%. The key is to manage the socket connection lifecycle properly within your state management solution (like Bloc) to avoid memory leaks.</p>
-    `
+    id: '2', slug: 'agentic-ai-react-langgraph', title: 'From ReAct to LangGraph: Building Real Agentic AI Systems',
+    excerpt: 'How stateful agent graphs with conditional branching, persistent checkpoints, and tool-use enable genuine multi-step autonomous reasoning.',
+    date: 'Feb 20, 2025', readTime: '10 min read', category: 'Agentic AI',
+    imageUrl: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1634&auto=format&fit=crop',
+    content: `<p>ReAct showed us that LLMs could reason and act in loops. LangGraph gave us the infrastructure to build production systems around that idea — with persistent state, conditional transitions, and real error recovery.</p><h3 class="text-2xl font-bold my-4 font-heading">Why State Machines Matter</h3><p>An agent without persistent state can't recover from failures mid-task. LangGraph's checkpoint system lets agents pause, resume, and retry specific nodes — which is the difference between a demo and a system you can trust in production.</p><h3 class="text-2xl font-bold my-4 font-heading">MCP Servers: Exposing Tools to Agents</h3><p>Model Context Protocol servers let you expose typed tools to any LLM provider without rewriting your agent logic. This is provider-agnostic tool-use at its best — your tools work whether the agent is running on GPT-4, Gemini, or a local Ollama model.</p>`,
   },
   {
-    id: '4',
-    slug: 'bloc-vs-riverpod',
-    title: 'State Management: Bloc vs. Riverpod',
-    excerpt: 'Choosing the right state management solution for your Flutter project.',
-    date: 'Dec 15, 2024',
-    readTime: '8 min read',
-    category: 'Flutter',
-    imageUrl: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1470&auto=format&fit=crop',
-    content: `
-      <p>State management is the heart of any Flutter application. While Provider was the go-to for years, Bloc and Riverpod have emerged as the dominant players in 2024.</p>
-      <h3 class="text-2xl font-bold my-4">Bloc: The Enterprise Choice</h3>
-      <p>Bloc enforces a strict separation of concerns and is event-driven. It's excellent for large teams where consistency is key. However, the boilerplate can be overwhelming for simple apps.</p>
-      <h3 class="text-2xl font-bold my-4">Riverpod: The Modern Contender</h3>
-      <p>Riverpod fixes many of Provider's flaws. It's compile-safe, doesn't depend on the widget tree, and is incredibly flexible. For new projects, Riverpod is often the better choice due to its simplicity and power.</p>
-    `
+    id: '3', slug: 'streaming-llm-mobile', title: 'Cutting AI Latency by 60% with Streaming LLM Responses in Flutter',
+    excerpt: 'How implementing streaming response architecture in a production Flutter app transformed the AI assistant user experience.',
+    date: 'Jan 15, 2025', readTime: '7 min read', category: 'Mobile AI',
+    imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1470&auto=format&fit=crop',
+    content: `<p>When we first shipped the AI assistant in the AiToXr mobile app, users perceived it as slow — even though the actual generation time was reasonable. The problem wasn't generation speed; it was time-to-first-token. Users saw nothing for 3–4 seconds, then got the full response at once. It felt broken.</p><h3 class="text-2xl font-bold my-4 font-heading">The Streaming Fix</h3><p>Streaming LLM responses — starting to render tokens as they arrive — cut perceived latency by ~60% without changing the underlying model or inference speed. The UX went from "is this working?" to feeling snappy and interactive. Implementation in Flutter required a custom stream controller and incremental UI state updates.</p><h3 class="text-2xl font-bold my-4 font-heading">Prompt Engineering for Mobile Contexts</h3><p>Mobile users have less patience than web users. Short, structured prompts with explicit output format instructions produce faster, more predictable responses — and reduce the token count that drives cost.</p>`,
   },
   {
-    id: '5',
-    slug: 'optimizing-mobile-performance',
-    title: 'Optimizing Mobile App Performance',
-    excerpt: 'Best practices for keeping your apps running smooth at 60fps.',
-    date: 'Jan 10, 2025',
-    readTime: '10 min read',
-    category: 'Performance',
-    imageUrl: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1469&auto=format&fit=crop',
-    content: `
-      <p>Jank is the enemy of a good user experience. Whether you're using Flutter, React Native, or Native technologies, maintaining 60fps (or 120fps) is crucial.</p>
-      <h3 class="text-2xl font-bold my-4">1. Minimize Re-renders</h3>
-      <p>In Flutter, use \`const\` constructors and split your widgets into smaller components. In React Native, use \`React.memo\` and \`useCallback\` to prevent unnecessary updates.</p>
-      <h3 class="text-2xl font-bold my-4">2. Offload Heavy Tasks</h3>
-      <p>Never block the UI thread. Use Isolates in Dart or Web Workers in JS for heavy computations like image processing or large JSON parsing.</p>
-    `
-  }
+    id: '4', slug: 'multi-llm-provider-agnostic', title: 'Multi-LLM Orchestration: Building Provider-Agnostic AI Systems',
+    excerpt: 'Dynamic routing across OpenAI, Gemini, Claude, and Ollama — and why locking into one provider is a production risk.',
+    date: 'Dec 10, 2024', readTime: '9 min read', category: 'Gen AI',
+    imageUrl: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop',
+    content: `<p>No single LLM is best at everything. GPT-4 excels at complex reasoning. Gemini handles multimodal inputs. Claude is exceptional for long-context tasks. Ollama keeps sensitive data on-device. A provider-agnostic architecture gives you access to all of them — with automatic failover when any one goes down.</p><h3 class="text-2xl font-bold my-4 font-heading">The Router Pattern</h3><p>A lightweight model router classifies incoming requests by complexity, modality, and sensitivity — then dispatches to the appropriate provider. This pattern can reduce costs by over 60% on mixed workloads while maintaining or improving quality on complex tasks.</p>`,
+  },
+  {
+    id: '5', slug: 'clean-architecture-flutter', title: 'Why Clean Architecture Saved My Flutter App',
+    excerpt: 'How structuring a 7-feature production app with Clean Architecture + Hive made it maintainable, testable, and actually shippable.',
+    date: 'Nov 5, 2024', readTime: '6 min read', category: 'Mobile',
+    imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1470&auto=format&fit=crop',
+    content: `<p>When I started CopyClip, the scope was deliberately ambitious: 7 integrated productivity tools, fully offline, shipped solo to the Play Store. Without a clear architecture, that scope would have collapsed into unmaintainable spaghetti. Clean Architecture kept it sane.</p><h3 class="text-2xl font-bold my-4 font-heading">Domain, Data, Presentation</h3><p>Clean Architecture's strict layer separation — domain (business logic), data (repositories and local storage with Hive), and presentation (Bloc + UI) — means features can be added or changed without breaking unrelated parts. Adding the Expense Tracker didn't touch the Notes or Canvas code at all.</p>`,
+  },
 ];
